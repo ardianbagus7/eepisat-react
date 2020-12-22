@@ -1,5 +1,5 @@
 import { Container } from 'components/atoms';
-import { About, Blogs, Contact, Header, Navigation, Projects, Skills, News, Sponsorship, Achievement } from 'components/organisms';
+import { About, Blogs, Contact, Header, Navigation, Projects, Skills, News, Sponsorship, Achievement, Division } from 'components/organisms';
 import { AboutSectionContentProps } from 'components/organisms/About/types';
 import { BlogsSectionContentProps } from 'components/organisms/Blogs/types';
 import { ContactSectionContentProps } from 'components/organisms/Contact/types';
@@ -7,9 +7,11 @@ import HeaderProps from 'components/organisms/Header/types';
 import { ProjectsSectionContentProps } from 'components/organisms/Projects/types';
 import { SkillsSectionContentProps } from 'components/organisms/Skills/types';
 import { LocaleProps } from 'contexts/language';
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useRef } from 'react';
 import Sponsorships from 'components/organisms/Sponsorship';
+import classNames from 'classnames';
+import { DivisionSectionContentProps } from 'components/organisms/Division/types';
 
 interface Props {
   data: {
@@ -19,22 +21,37 @@ interface Props {
     blogs: BlogsSectionContentProps;
     skills: SkillsSectionContentProps;
     contact: ContactSectionContentProps;
+    division: DivisionSectionContentProps;
   };
   locale: LocaleProps;
   sections: { about: string; projects: string; blogs: string; skills: string; contact: string };
 }
 
 export default function Landing({ data, locale, sections }: Props) {
-  const { header, about, projects, blogs, skills, contact } = data;
+  const { header, about, projects, blogs, skills, contact, division } = data;
   const lowerSectionRef = useRef();
+
+  const [scroll, setScroll] = useState(false);
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      setScroll(window.scrollY > 50);
+    });
+  }, []);
 
   return (
     <>
-      <Navigation className="fixed z-30 py-4" locale={locale} sections={sections} />
+      <Navigation className={classNames("fixed z-30 py-4 transition duration-500", scroll ? "bg-white" : "")} locale={locale} sections={sections} />
       <Header data={header.data} text={header.text} lowerSectionRef={lowerSectionRef} />
       <Container className="pt-32">
         <div className="flex flex-wrap">
           <main className="w-full mt-12">
+            <Division
+              title='Our Division'
+              content={{
+                items: division.items,
+              }}
+              className="pt-12 mt-40"
+            />
             <About
               title={sections.about}
               content={{

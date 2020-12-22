@@ -6,6 +6,7 @@ import React from 'react';
 import { useState } from 'react';
 import classNames from 'classnames';
 import { Container } from 'components/atoms';
+import { Link } from 'react-router-dom';
 
 interface Props {
   locale: LocaleProps;
@@ -28,7 +29,7 @@ export default function Navigation({ locale, sections, className }: Props) {
       locale.change(option.value);
     }
   };
-  
+
   return (
     <nav>
       <Animated.FromDirection
@@ -38,6 +39,7 @@ export default function Navigation({ locale, sections, className }: Props) {
         onAnimationComplete={() => setAnimationFinish(true)}
       >
         <Container className="flex">
+          <Link to="/"> <img className="h-auto" src="./img/logo/LOGOTYPE.png" alt="Logo EEPISAT Pens" /></Link>
           <div className="flex self-center flex-1 pr-8">
             <div className="sm:ml-auto">
               <TextSelect

@@ -7,6 +7,8 @@ import { useContext } from 'react';
 import { LanguageContext } from 'contexts';
 import { MenuItem, Overlay } from 'components/atoms';
 import { useRef } from 'react';
+import { Link } from "react-router-dom";
+
 
 interface Props {
   animationFinish?: boolean;
@@ -18,6 +20,7 @@ export default function MainMenu({ animationFinish, sections }: Props) {
   const menu = useRef<HTMLDivElement>(null);
 
   return (
+    
     <div className="self-center ml-auto sm:ml-0">
       <Menu>
         {({ open }) => (
@@ -25,7 +28,7 @@ export default function MainMenu({ animationFinish, sections }: Props) {
             <Menu.Button as="div" className="relative z-20">
               <MenuButton isOpen={open} animationComplete={animationFinish} />
             </Menu.Button>
-            <Overlay contentRef={menu} open={open} animationFinish={animationFinish} classOnOpen="w-full" classOnClose="w-0" className="text-indigo-600"/>
+            <Overlay contentRef={menu} open={open} animationFinish={animationFinish} classOnOpen="w-full" classOnClose="w-0" className="text-indigo-600" />
             <AnimatePresence initial={false}>
               {open && (
                 <Menu.Items
@@ -33,7 +36,7 @@ export default function MainMenu({ animationFinish, sections }: Props) {
                   static
                 >
                   <div className="grid gap-x-32 gap-y-10" ref={menu}>
-                    <Menu.Item as="a" href="#about">
+                    <Menu.Item as="a">
                       {({ active }: { active: boolean }) => (
                         <Animated.FromDirection
                           from="bottom"
@@ -42,11 +45,13 @@ export default function MainMenu({ animationFinish, sections }: Props) {
                           custom={1}
                           delay={0.2}
                         >
-                          <MenuItem active={active}>{sections.about}</MenuItem>
+                          <MenuItem active={active}>
+                            <Link to="/">Home</Link>
+                          </MenuItem>
                         </Animated.FromDirection>
                       )}
                     </Menu.Item>
-                    <Menu.Item as="a" href="#projects">
+                    <Menu.Item as="a">
                       {({ active }: { active: boolean }) => (
                         <Animated.FromDirection
                           from="bottom"
@@ -55,11 +60,13 @@ export default function MainMenu({ animationFinish, sections }: Props) {
                           custom={2}
                           delay={0.2}
                         >
-                          <MenuItem active={active}>{sections.projects}</MenuItem>
+                          <MenuItem active={active}>
+                            <Link to="/team">Team</Link>
+                          </MenuItem>
                         </Animated.FromDirection>
                       )}
                     </Menu.Item>
-                    <Menu.Item as="a" href="#blogs">
+                    {/* <Menu.Item as="a" href="#blogs">
                       {({ active }: { active: boolean }) => (
                         <Animated.FromDirection
                           from="bottom"
@@ -99,7 +106,7 @@ export default function MainMenu({ animationFinish, sections }: Props) {
                           </MenuItem>
                         </Animated.FromDirection>
                       )}
-                    </Menu.Item>
+                    </Menu.Item> */}
                   </div>
                 </Menu.Items>
               )}

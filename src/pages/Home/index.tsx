@@ -5,7 +5,8 @@ import {
   projects as projectsData,
   blogs as blogsData,
   skills as skillsData,
-  contact as contactData
+  contact as contactData,
+  divisions as divisionData,
 } from 'data';
 import {
   sections as sectionsEn,
@@ -49,6 +50,9 @@ export default function Home() {
         header: {
           data: headerData,
           text: locale.header,
+        },
+        division:{
+          items: divisionData,
         },
         about: {
           text: locale.about.text,

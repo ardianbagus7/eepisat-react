@@ -8,6 +8,7 @@ import { useAnimation } from 'framer-motion';
 import { useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
 import { forwardRef } from 'react';
+import { Link } from 'react-router-dom';
 
 const About = forwardRef<HTMLElement | undefined, AboutSectionProps>(
   ({ title, content, className }: AboutSectionProps, ref) => {
@@ -47,23 +48,27 @@ const About = forwardRef<HTMLElement | undefined, AboutSectionProps>(
             custom={0}
             delay={1}
           >
-              <SectionTitle
-                lineProps={{
-                  animate: controls,
-                  custom: 1,
-                  transition: {
-                    delay: 1,
-                  },
-                }}
-              >
-                <Animated.Letter text={title} animate={controls} custom={0} delay={1} />
-              </SectionTitle>
-              <ContentText className="lg:text-left">{content.text}</ContentText>
-              <Animated.FromDirection className="flex justify-center lg:justify-start mt-5" from="bottom" animate={controls} custom={2} delay={1}>
-                <RoundedButton as="a" href="#">
+            <SectionTitle
+              lineProps={{
+                animate: controls,
+                custom: 1,
+                transition: {
+                  delay: 1,
+                },
+              }}
+            >
+              <Animated.Letter text={title} animate={controls} custom={0} delay={1} />
+            </SectionTitle>
+            <ContentText className="lg:text-left">{content.text}</ContentText>
+            <Animated.FromDirection className="flex justify-center lg:justify-start mt-5" from="bottom" animate={controls} custom={2} delay={1}>
+              <Link to="/team">
+                <RoundedButton as="a">
                   {language.value === 'en' ? 'See more' : 'Lihat Selengkapnya'}
+
                 </RoundedButton>
-              </Animated.FromDirection>
+              </Link>
+
+            </Animated.FromDirection>
           </Animated.FromDirection>
 
           <div className="mx-auto mt-6 lg:mr-0 lg:ml-auto lg:mt-0">

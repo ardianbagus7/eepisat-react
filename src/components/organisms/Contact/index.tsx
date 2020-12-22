@@ -35,6 +35,7 @@ const Contact = forwardRef<HTMLElement | undefined, ContactSectionProps>(
           }
         }}
       >
+
         <h2 className="flex justify-center text-2xl font-bold text-gray-600 md:justify-start">
           <Animated.Letter text={title} animate={controls} custom={0} delay={0.6} />
         </h2>
@@ -53,6 +54,8 @@ const Contact = forwardRef<HTMLElement | undefined, ContactSectionProps>(
               delay={0.6}
             />
           </a>
+
+
           <div className="flex items-center mt-8 md:mt-0">
             <Animated.FromDirection from="bottom" animate={controls} custom={2.2} delay={0.6}>
               <FullRoundButton as="a" href={socials.facebook} label="Facebook">

@@ -18,7 +18,7 @@ const Achievement = forwardRef<HTMLElement | undefined, ProjectsSectionProps>(
     ({ title, content, className }: ProjectsSectionProps, ref) => {
         const controls = useAnimation();
         const [refView, inView] = useInView({
-            threshold: 0.4,
+            threshold: 0.1,
         });
         const language = useContext(LanguageContext);
         const { items } = content;

@@ -6,6 +6,8 @@ import HighlightedTextIcon from 'components/molecules/HighlightedTextIcon';
 import SearchBox from 'components/molecules/SearchBox';
 import BlogPost from 'components/molecules/BlogPost';
 import MainMenu from 'components/molecules/MainMenu';
+import TeamCard from 'components/molecules/TeamCard';
+import DivisionCard from 'components/molecules/DivisionCard';
 
 export {
   TextIconButton,
@@ -16,4 +18,6 @@ export {
   SearchBox,
   BlogPost,
   MainMenu,
+  TeamCard,
+  DivisionCard
 };
