@@ -1,10 +1,8 @@
-# Fama - Portfolio Website Template
+# EEPISAT Website
 
-TailwindCSS based personal branding template. Built with react and framer-motion.
+TailwindCSS based. Built with react and framer-motion.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-![Preview](https://cdn.dribbble.com/users/3490149/screenshots/14749044/media/a28226282decfdb8571c551e69feb706.png)
 
 
 ## Available Scripts
