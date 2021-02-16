@@ -58,8 +58,8 @@ const Contact = forwardRef<HTMLElement | undefined, ContactSectionProps>(
 
           <div className="flex items-center mt-8 md:mt-0">
             <Animated.FromDirection from="bottom" animate={controls} custom={2.2} delay={0.6}>
-              <FullRoundButton as="a" href={socials.facebook} label="Facebook">
-                <Icons.Facebook className="w-6" />
+              <FullRoundButton as="a" href={socials.linkedin} label="LinkedIn">
+                <Icons.Linkedin className="w-6" />
               </FullRoundButton>
             </Animated.FromDirection>
             {/* <Animated.FromDirection from="bottom" animate={controls} custom={2.4} delay={0.6}>

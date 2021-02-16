@@ -10,5 +10,6 @@ export interface ContactSectionContentProps {
     twitter: string;
     instagram: string;
     youtube: string;
+    linkedin: string;
   };
 }

@@ -55,7 +55,7 @@ const Sponsorships = forwardRef<HTMLElement | undefined, SkillsSectionProps>(
         >
           <Animated.Letter text={title} animate={controls} custom={0} delay={1} />
         </SectionTitle>
-        <Animated.FromDirection
+        {/* <Animated.FromDirection
           className="mx-auto mt-6 lg:w-2/3"
           from="left"
           animate={controls}
@@ -65,7 +65,36 @@ const Sponsorships = forwardRef<HTMLElement | undefined, SkillsSectionProps>(
           <Animated.Reveal from="left" animate={controls} custom={1} delay={1}>
             <ContentText className="text-center">Open for Sponsorship</ContentText>
           </Animated.Reveal>
-        </Animated.FromDirection>
+        </Animated.FromDirection> */}
+        <div className="mt-6 sm:flex items-center justify-center mt-8">
+
+          <Animated.FromDirection
+            from="bottom"
+            animate={controls}
+            delay={0.3}
+            className={"sm:w-80"}
+          >
+            <div className={skillIconsClasses}>
+              <a target="_blank" href="https://sekolahrobot.com/" className="focus:outline-none">
+                <img src="./img/sponsorship/sri.png" alt="Sekolah Robot Indonesia" />
+              </a>
+            </div>
+          </Animated.FromDirection>
+
+          <Animated.FromDirection
+            from="bottom"
+            animate={controls}
+            delay={0.3}
+            className={"sm:w-80"}
+          >
+            <div className={skillIconsClasses}>
+              <a target="_blank" href="#" className="focus:outline-none">
+                <img src="./img/sponsorship/sm.png" alt="" />
+              </a>
+            </div>
+          </Animated.FromDirection>
+        </div>
+
         {/* <div className="flex items-center justify-center mt-8">
           {upperSkills.map((SkillItem, index) => (
             <Animated.FromDirection
