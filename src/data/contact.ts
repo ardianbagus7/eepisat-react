@@ -7,6 +7,7 @@ const contact: ContactSectionContentProps = {
     twitter: 'https://twitter.com/eepisat',
     instagram: 'https://instagram.com/eepisat',
     youtube: 'https://www.youtube.com/channel/UCN2L2cHItJ31je-5OCDWwHg/featured?view_as=subscriber',
+    linkedin: 'https://id.linkedin.com/company/eepisat',
   },
 };
 
